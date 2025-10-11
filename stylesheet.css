@@ -113,18 +113,41 @@ h2 {
   width: 160px;
   height: 160px;
   position: relative;
+  display: block;
+  background: rgba(255, 0, 0, 0.3); /* 빨간색 반투명 */
+  border: 2px solid red;
+}
+
+.one img {
+  width: 160px;
+  height: 160px;
+  display: block;
+  margin: 0;
+  padding: 0;
+  object-fit: cover;
+  border: 3px solid green; /* 초록 테두리 */
 }
 
 .two {
   width: 160px;
   height: 160px;
   position: absolute;
-  top: 0;            
-  left: 0;             
-  opacity: 0;         
-  transition: opacity .2s ease-in-out;
-  -moz-transition: opacity .2s ease-in-out;
-  -webkit-transition: opacity .2s ease-in-out;
+  top: 0 !important;         /* !important로 강제 */
+  left: 0 !important;        /* !important로 강제 */
+  opacity: 1 !important;     /* 항상 보이게 */
+  background: rgba(0, 0, 255, 0.3); /* 파란색 반투명 */
+  border: 2px solid blue;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.two video {
+  width: 160px;
+  height: 160px;
+  display: block;
+  margin: 0;
+  padding: 0;
+  object-fit: cover;
+  border: 3px solid yellow; /* 노란 테두리 */
 }
 
 .fade {
