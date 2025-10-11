@@ -211,3 +211,50 @@ span.highlight {
 .info-detail {
   color: #666;
 }
+
+.personal-life {
+    display: flex;
+    overflow-x: auto;
+    gap: 10px;
+    padding: 10px;
+    height: 300px; /* Adjust the height to your preference */
+    scroll-behavior: smooth;
+}
+
+/* Minimal scrollbar styling */
+.personal-life::-webkit-scrollbar {
+    height: 8px; /* Adjust height for horizontal scroll */
+}
+
+.personal-life::-webkit-scrollbar-track {
+    background: #f1f1f100; /* Light background for scrollbar track */
+}
+
+.personal-life::-webkit-scrollbar-thumb {
+    background-color: #888; /* Scrollbar color */
+    border-radius: 10px;
+}
+
+.personal-life::-webkit-scrollbar-thumb:hover {
+    background-color: #555; /* Darker color on hover */
+}
+
+/* For Firefox */
+.personal-life {
+    scrollbar-width: thin; /* Thin scrollbar */
+    scrollbar-color: #888 #f1f1f1; /* Scrollbar thumb and track colors */
+}
+
+/* Adjust the images inside the gallery */
+.personal-life img {
+    height: 100%; /* Ensure the images fill the height of the gallery */
+    width: auto; /* Maintain aspect ratio */
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.personal-life img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
