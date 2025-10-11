@@ -166,15 +166,15 @@ span.highlight {
 
 /* Gradient backgrounds */
 .gradient-purple {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #9795f0 0%, #525099 100%);
 }
 
 .gradient-pink {
-  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  background: linear-gradient(135deg, #f7b7b7 0%, #e88996 100%);
 }
 
 .gradient-blue {
-  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  background: linear-gradient(135deg, #BCD4E6 0%, #6A8EAE 100%);
 }
 
 /* Info content */
