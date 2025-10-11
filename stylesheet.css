@@ -130,9 +130,9 @@ h2 {
   width: 160px;
   height: 160px;
   position: absolute;
-  top: 0 !important;         /* !important로 강제 */
-  left: 0 !important;        /* !important로 강제 */
-  opacity: 1 !important;     /* 항상 보이게 */
+  top: 0 !important;         
+  left: 0 !important;        
+  opacity: 1 !important;     
   background: rgba(0, 0, 255, 0.3); /* 파란색 반투명 */
   border: 2px solid blue;
   transition: opacity 0.2s ease-in-out;
