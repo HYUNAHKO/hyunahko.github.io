@@ -110,15 +110,15 @@ h2 {
 }
 
 .one {
-  width: 160px;
-  height: 160px;
+  width: 240px;
+  height: 240px;
   position: relative;
   display: block;
 }
 
 .one img {
-  width: 160px;
-  height: 160px;
+  width: 240px;
+  height: 240px;
   display: block;
   margin: 0;
   padding: 0;
@@ -127,8 +127,8 @@ h2 {
 }
 
 .two {
-  width: 160px;
-  height: 160px;
+  width: 240px;
+  height: 240px;
   position: absolute;
   top: 0;
   left: 0;
@@ -139,8 +139,8 @@ h2 {
 }
 
 .two video {
-  width: 160px;
-  height: 160px;
+  width: 240px;
+  height: 240px;
   display: block;
   margin: 0;
   padding: 0;
