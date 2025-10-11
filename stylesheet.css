@@ -122,7 +122,8 @@ h2 {
   display: block;
   margin: 0;
   padding: 0;
-  object-fit: cover; 
+  object-fit: contain;  
+  object-position: center center; 
 }
 
 .two {
@@ -143,7 +144,8 @@ h2 {
   display: block;
   margin: 0;
   padding: 0;
-  object-fit: cover; 
+  object-fit: contain;  
+  object-position: center center;
 }
 
 .fade {
