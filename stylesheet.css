@@ -242,13 +242,13 @@ span.highlight {
 /* For Firefox */
 .personal-life {
     scrollbar-width: thin; /* Thin scrollbar */
-    scrollbar-color: #888 #f1f1f1; /* Scrollbar thumb and track colors */
+    scrollbar-color: #888 #f1f1f1; 
 }
 
 /* Adjust the images inside the gallery */
 .personal-life img {
-    height: 100%; /* Ensure the images fill the height of the gallery */
-    width: auto; /* Maintain aspect ratio */
+    height: 100%; 
+    width: auto; 
     border-radius: 10px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
