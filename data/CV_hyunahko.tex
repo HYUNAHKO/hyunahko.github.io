@@ -1,0 +1,392 @@
+%-------------------------
+% Resume in Latex
+% Original Author : Sourabh Bajaj
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{amsmath}
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\setlength{\footskip}{10pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-0.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-2pt}]
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSummary}[1]{
+  \item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      #1
+    \end{tabular*}
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\resumeEmployment}[4]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\resumeProject}[3]{\item\small{\textbf{#1}\\\textit{#2}\\#3}\vspace{2pt}}
+
+\newcommand{\resumeAwards}[3]{\item\small{\textbf{#1}\\\textit{#2}\\#3}\vspace{2pt}}
+
+\newcommand{\resumeCommunity}[3]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\resumeResearch}[5]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} {\small #4 \vspace{-2pt}} & \textit{\small #5} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\resumeTalk}[2]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\resumeSkills}[1]{\item\small #1}
+
+\newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-4pt}}
+
+\renewcommand{\labelitemii}{$\circ$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+
+\newcommand{\resumeEmploymentListStart}{\begin{itemize}[leftmargin=*]}
+\newcommand{\resumeEmploymentListEnd}{\end{itemize}}
+
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  CV STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%----------HEADING-----------------
+\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+  \textbf{\href{https://www.linkedin.com/in/hyunah-ko-75516a30a/}{\Large Hyunah Ko}} & Github: https://github.com/HYUNAHKO \\
+  % $|$ SlideShare: YourSlideShare \\
+   & Email : \href{mailto:hyunahko@kaist.ac.kr}{hyunahko@kaist.ac.kr} 
+\end{tabular*}
+
+% %-----------EXPERIENCE-----------------
+% \section{Employment}
+%   \resumeEmploymentListStart
+%     \resumeEmployment
+%       {[Company1]}{Seoul, South Korea}
+%       {[Role1] (Full-time)}{Apr. 20XX - Present}
+%         \resumeItemListStart
+%             \resumeItem{[Role1] with \href{https://www.google.com}{\color{blue} [some Link]}.}
+%             \resumeItem{[Role2].}
+%             \resumeItem{[Role3].}
+%         \resumeItemListEnd   
+        
+%     \resumeEmployment
+%       {[Company2]}{London, UK}
+%       {[Role2] (Part-time)}{Oct. 20XX - Dec. 20XX}
+%       \resumeItemListStart
+%           \resumeItem{[Role1].}
+%       \resumeItemListEnd
+      
+%   \resumeEmploymentListEnd
+
+%-----------EDUCATION-----------------
+\section{Education}
+\begin{itemize}[leftmargin=*]
+  \item \textbf{KAIST} \hfill Seoul, South Korea\\
+    \textit{M.S. student, Kim Jaechul Graduate School of AI} \hfill \textit{Current}\\
+    CVLAB; Advisor: Prof. Seungryong Kim
+  \item \textbf{Yonsei University} \hfill Seoul, South Korea\\
+    \textit{B.S. in Civil and Environmental Engineering}\\
+    \textit{Double Major: Computer Science} \hfill \textit{GPA: 3.95/4.5}
+\end{itemize}
+
+%-----------Research Interests -----------------
+\section{Research Interests}
+
+My research focuses on geometry-aware visual representations for 3D/4D understanding and robotics. I am particularly interested in lifting 2D foundation-model features into dense 3D representations while preserving semantic information and consistency across views. I also study compact 3D/4D reconstruction and efficient vision-language-action models, with the long-term goal of enabling robots to perceive and interact with the physical world.
+
+\begin{itemize}
+    \item Geometry-guided multi-view representations, dense correspondence, and 3D feature lifting
+    \item Compact 3D/4D representations and feed-forward scene reconstruction
+    \item Visual representations and efficient vision-language-action models for robotics
+\end{itemize}
+\section{Publications and Preprints}
+\begin{itemize}[leftmargin=*]
+\item \small{\textbf{One Loss Is Not Enough: Cross-Objective Structured Pruning for Reasoning Vision--Language--Action Models}\\
+Seongchan Kim, Soowon Son, Sangoh Kim, \underline{Hyunah Ko}, Eunbeen Hong, Hyunkoo Lee, Sanghyun Lee, WonJun Moon, Kihong Kim, Dongyeon Son, Woongchan Nam, Seungryong Kim\\
+\textit{NeurIPS Workshops, 2026}. Grounded and Faithful Vision-Language Models for Real-World Deployment; On-Device Intelligence: Foundation Models under Real-World Constraints; PTA: From Pretrained Representations to Acting Agents.}
+
+\item \small{\textbf{C4G: Learning Global Motion with Compact Gaussians for Feed-Forward 4D Reconstruction}\\
+Mungyeom Kim*, Minkyeong Jeon*, Honggyu An*, Jaewoo Jung, \underline{Hyuna Ko}, Jisang Han, Hyeonseo Yu, Donghwan Shin, Sunghwan Hong, Takuya Narihira, Kazumi Fukuda, Yuki Mitsufuji, Seungryong Kim\\
+\textit{arXiv preprint, 2026}.\\
+\href{https://arxiv.org/abs/2605.31595}{Paper} \quad \href{https://cvlab-kaist.github.io/C4G/}{Project}}
+
+\item \small{\textbf{C3G: Learning Compact 3D Representations with 2K Gaussians}\\
+Honggyu An*, Jaewoo Jung*, Mungyeom Kim, Chaehyun Kim, Minkyeong Jeon, Jisang Han, Kazumi Fukuda, Takuya Narihira, \underline{Hyuna Ko}, Junsu Kim, Sunghwan Hong, Yuki Mitsufuji, Seungryong Kim\\
+\textit{CVPR, 2026}. Also at the Workshop on Open-World 3D Scene Understanding and Representations, CVPR 2026.\\
+\href{https://arxiv.org/abs/2512.04021}{Paper} \quad \href{https://cvlab-kaist.github.io/C3G/}{Project}}
+
+\item \small{\textbf{Backbone Augmented Training for Adaptations}\\
+Jae Wan Park, Junhyeok Kim, Youngjun Jun, \underline{Hyunah Ko}, Seong Jae Hwang\\
+\textit{AAAI Workshop on Artificial Intelligence with Biased or Scarce Data, 2026 \textbullet{} Oral}. arXiv preprint, 2025.\\
+\href{https://arxiv.org/abs/2506.04288}{Paper}}
+
+\item \small{\textbf{Probing and Leveraging Video Diffusion Transformer Features for Robust Point Tracking}\\
+Soowon Son, Honggyu An, Jisu Nam, \underline{Hyunah Ko}, Chaehyun Kim, Dahyun Chung, Siyoon Jin, Jung Yi, Junhwa Hur, Seungryong Kim\\
+\textit{arXiv preprint, 2025; revised 2026}. DiTracker\\
+\href{https://arxiv.org/abs/2512.20606}{Paper} \quad \href{https://cvlab-kaist.github.io/DiTracker/}{Project}}
+
+\item \small{\textbf{Fourier Decomposition for Explicit Representation of 3D Point Cloud Attributes}\\
+Donghyun Kim, Chanyoung Kim, \underline{Hyunah Ko}, Seong Jae Hwang\\
+\textit{arXiv preprint, 2025; revised 2026}.\\
+\href{https://arxiv.org/abs/2503.10055}{Paper}}
+
+\end{itemize}
+{\small * Equal contribution. Also published as Hyuna Ko.}
+
+%-----------Projects-----------------
+
+\section{Research Experience}
+\begin{itemize}[leftmargin=*]
+\item \textbf{CVLAB, KAIST} \hfill Jul. 2025 -- Present\\
+\small M.S. student; previously undergraduate researcher. Advisor: Prof. Seungryong Kim
+\item \textbf{Medical Imaging and Computer Vision Lab, Yonsei University}\\
+\small Undergraduate Researcher; Advisor: Prof. Seong Jae Hwang \hfill Jul. 2024 -- Jul. 2025
+\item \textbf{Environmental Biotechnology \& Thermal Laboratory, Yonsei University}\\
+\small Undergraduate Researcher; Advisor: Prof. Joonhong Park \hfill Jul. 2023 -- Sep. 2023
+\end{itemize}
+
+\section{Team Projects}
+  \resumeSubHeadingListStart
+  \resumeProject
+    {Startup Investment Round Prediction via BM-based Clustering}
+    {May. 2025 -- Sep. 2025} 
+    {\parbox[t]{0.75\textwidth}{Predicted investment rounds (Seed--IPO) using multi-source time-series data. Validated BM clusters via statistical metrics (Cohesion/Separation) and identified stage-specific growth factors.}}
+    
+  \resumeProject
+    {Single Image to 3D Generation via Video Diffusion and Gaussian Splatting}
+    {Apr. 2025 -- May. 2025} 
+    {\parbox[t]{0.75\textwidth}{Developed a unified framework integrating \textbf{CameraCtrl} and \textbf{3D Gaussian Splatting} to ensure temporal and geometric consistency. Optimized 3D mesh generation via SDS loss, achieving high-fidelity results; awarded \textbf{3rd Place at YAICON 6th}.}}
+    
+  \resumeProject
+      {Recipe Recommendation via Object Detection and Knowledge Graph QA*}
+      {Oct. 2024 -- Nov. 2024}
+      {\parbox[t]{0.75\textwidth}{Built a recipe recommendation system using YOLOv5 and knowledge-augmented prompts with Stable Diffusion image generation.}}
+
+  \resumeProject
+      {Pet Body Measurement via Depth Estimation}
+      {Oct. 2024 -- Nov. 2024}
+      {\parbox[t]{0.75\textwidth}{Developed a depth-based system for pet body length measurement using MMPose and fine-tuned Depth Anything v2 with patch-wise refinement.}}   
+      
+  \resumeProject
+      {Generative Pet Memorials with LLaMA3 and Stable Diffusion}
+      {Aug. 2024 -- Sep. 2024}
+      {\parbox[t]{0.75\textwidth}{Generated personalized pet letters and images using LoRA-finetuned LLaMA3 and Stable Diffusion with ControlNet and style transfer.}}
+
+    \resumeProject
+      {LLM-based Personalized Health Report Generation }
+      {Jul. 2024 -- Sep. 2024}
+      {\parbox[t]{0.75\textwidth}{Developed a personalized report generation system using medical LLMs and Retrieval-Augmented Generation. }}
+       % \resumeItemListStart
+       %     \resumeItem{Text style transfer}
+       % \resumeItemListEnd
+    \resumeProject
+      {Seoul Night Bus Route Analysis and Design*}
+      {Jul. 2024 -- Aug. 2024}
+      {\parbox[t]{0.75\textwidth}{Analyzed public transportation and mobility data to identify underserved regions in Seoul. Applied EDA and regression modeling to propose new night bus routes based on demand patterns.}}
+    
+    \resumeProject
+      {Room Generation with Stable Diffusion and ControlNet*}
+      {Apr. 2024 -- May. 2024}
+      {\parbox[t]{0.73\textwidth}{Trained a customized model using ControlNet and Stable Diffusion to generate personalized room images from segmentation and depth data.}}
+        
+    \resumeProject
+        {A(uto)ssignment: Automated Problem Extraction from Textbooks}
+        {Mar. 2024 -- Apr. 2024}
+        {\parbox[t]{0.75\textwidth}{
+        Built an automated pipeline using YOLOv7 and PORORO OCR to detect and extract questions from textbook PDFs, enabling custom problem set generation.
+        }}
+        
+   \resumeProject
+        {Traffic Commute Analysis for Northern \& Southern Seoul}
+        {Jan. 04, 2024 -- Jan. 30, 2024}
+        {\parbox[t]{0.68\textwidth}{
+        Analyzed ridership and station data to identify high-congestion areas in commutes from Gyeonggi Province to Seoul using EDA and statistical methods.
+        }}
+
+  \resumeSubHeadingListEnd
+\begin{flushright}
+\vspace{10pt}
+\text{\small * Served as a team leader.}
+\vspace{-5pt}
+\end{flushright}
+
+% \section{Personal Projects}
+%   \resumeSubHeadingListStart
+%     \resumeProject
+%         {Detecting AI-generated Video
+%         using Texture Contrast}{Mar. 2024 -- Jun. 2024} 
+%         {Applying PatchCraft architecture to AI-generated Video Detection Domain.}
+%     \resumeProject
+%         {Medical Image Super Resolution}{Jul. 2023 -- Aug. 2023} 
+%         {Super resolution for low-dose CT image based on RED-CNN.}
+%     \resumeProject
+%         {Continual Learning Analysis}{Jul. 2023 -- Aug. 2023} 
+%         {Exploring feature space transformations in continual learning  using t-SNE analysis.}
+%     \resumeProject
+%         {Reinforcement Learning for GPS Accuracy Enhancement}{Sep. 2022 -- Mar. 2023} 
+%         {Employing reinforcement learning to enhance GPS signal accuracy.}
+%   \resumeSubHeadingListEnd
+% \begin{flushright}
+% \vspace{8pt}
+% \end{flushright}
+
+%-----------Papers-----------------
+%-----------EXPERIENCE-----------------
+%-----------Relevant Coursework-----------------
+\section{Selected Coursework}
+\begin{itemize}[leftmargin=*]
+  \resumeItem{\textbf{AI/ML}: Introduction to AI, 
+    NLP and ChatGPT, Large Language Model, 
+    Computer Vision, Reinforcement Learning}
+  \resumeItem{\textbf{Systems}: Operating System, 
+    Data Structures, OOP, 
+    Multicore and GPU Programming}
+  \resumeItem{\textbf{Math/Stats}: Linear Algebra, 
+    Introduction to Statistics, 
+    Probability and Statistics}
+\end{itemize}
+\vspace{-2pt}
+
+
+
+
+ 
+%-----------Skills-----------------
+\section{Skills}
+  \resumeSubHeadingListStart
+    \resumeSkills{\textbf{Programming Languages}: Python (Expert), Java (Advanced), C++ (Intermediate), JavaScript (Beginner)}
+    \resumeSkills{\textbf{Development Tools}: Git, Docker, Linux/Unix, Matlab}
+    \resumeSkills{\textbf{Languages}: Korean (Native), English (Proficient)}
+  \resumeSubHeadingListEnd
+  
+%-----------Honors and Awards-----------------
+\section{Honors and Awards}
+  \resumeSubHeadingListStart
+    \resumeAwards
+      {Grand Prize, 2024 Jeju Satellite Data Utilization Competition}
+      {Jul. 2024 -- Aug. 2024}
+      {\parbox[t]{0.7\textwidth}{Proposed a data-driven solution and business model to address regional issues in Jeju Island by analyzing satellite imagery and identifying actionable insights.}}
+    
+    \resumeAwards
+      {77th out of 514, AirQo African Air Quality Prediction Challenge, Zindi}
+      {Mar. 2024 -- Jun. 2024}
+      {\parbox[t]{0.7\textwidth}{Developed a model to estimate air pollution levels using satellite imagery, addressing the high cost of ground-based sensor networks in large regions like Africa.}}
+    \resumeSubHeadingListEnd
+    
+  
+%-----------Community-----------------
+\section{Extracurricular Activities}
+  \resumeSubHeadingListStart
+    \resumeCommunity{Yonsei Computer Club}{}
+    {Vice President (Feb. 2024 -- Feb. 2025)}
+    
+    \resumeCommunity{Yonsei Artificial Intelligence}{}
+    {Vice President (2025)}
+    
+    \resumeCommunity{Yonsei Data Science Lab}{\textit{Dec. 2023 -- Nov. 2024}}
+    {}
+  \resumeSubHeadingListEnd
+
+
+
+
+% %-----------EXPERIENCE-----------------
+% \section{Honors and Awards}
+%   \resumeSubHeadingListStart
+%     \resumeResearch
+%       {Excellence Reward, 2023 Yonsei Medical Convergence Challenge}{}
+%       {held by The Medical Scientist Training Program (Undergraduate Course)}{}{Jan. 2023}
+
+
+  
+% %-----------Talks-----------------
+% \section{Conference Talks}
+%     \resumeSubHeadingListStart
+    
+%         \resumeTalk{[Conference name]}{20XX}
+%             \resumeItemListStart
+%                 \resumeItem{[Talk details]}
+%             \resumeItemListEnd
+
+%         \resumeTalk{[Conference name]}{20XX}
+%             \resumeItemListStart
+%                 \resumeItem{[Talk details]}
+%             \resumeItemListEnd
+
+%     \resumeSubHeadingListEnd
+
+%-------------------------------------------
+\end{document}

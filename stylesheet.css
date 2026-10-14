@@ -258,3 +258,52 @@ span.highlight {
     transform: scale(1.05);
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
 }
+
+
+/* Academic profile content refresh, October 2026. */
+* { box-sizing: border-box; }
+body { margin: 0; color: #222; background: #fff; line-height: 1.6; }
+.homepage { max-width: 840px; margin: 0 auto; padding: 28px 24px 32px; }
+.profile { display: grid; grid-template-columns: minmax(0, 1fr) 220px; align-items: center; gap: 36px; padding: 12px 0 20px; }
+.profile h1 { text-align: center; font-size: 32px; font-weight: 400; margin: 0 0 20px; }
+.profile-photo { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 50%; }
+.profile-links { text-align: center; line-height: 2; }
+section { margin-top: 32px; }
+section h2 { margin-bottom: 15px; }
+section li { margin-bottom: 5px; }
+.entry { position: relative; margin: 17px 0; }
+.entry-status { display: block; color: #666; font-size: 13px; }
+.muted, .publication-detail { color: #666; }
+.publication { padding: 20px 0; border-bottom: 1px solid #e8e8e8; }
+.publication:last-child { border-bottom: 0; padding-bottom: 0; }
+.publication h3, .project h3 { font-size: 15px; line-height: 1.5; margin: 0 0 7px; }
+.publication p { margin: 6px 0; }
+.publication .authors { line-height: 1.65; }
+.venue { font-style: italic; }
+.publication-note { font-size: 12px; margin: 0; }
+.publication-detail { font-size: 13px; }
+.paper-links { font-weight: 700; }
+.project { display: grid; grid-template-columns: 200px minmax(0, 1fr); gap: 24px; align-items: center; margin: 24px 0; }
+.project-media { min-width: 0; }
+.project-media > img { width: 100%; height: auto; }
+.project-media .one, .project-media .two { width: 200px; height: 200px; }
+.project-media .one img, .project-media .two video { width: 200px; height: 200px; }
+.personal-life { height: 250px; padding-left: 0; }
+footer { margin-top: 36px; text-align: right; color: #666; font-size: 12px; }
+footer a { font-size: inherit; }
+a:focus-visible { outline: 2px solid #1772d0; outline-offset: 3px; }
+@media (max-width: 600px) {
+ .homepage { padding: 24px 20px; }
+ .profile { display: flex; flex-direction: column-reverse; gap: 20px; }
+ .profile-photo { width: 170px; }
+ .profile h1 { margin-bottom: 14px; }
+ .project { grid-template-columns: 1fr; gap: 12px; }
+ .project-media { max-width: 240px; margin: 0 auto; }
+ .personal-life { height: 200px; }
+ .publication h3, .authors, .publication-detail { overflow-wrap: anywhere; }
+}
+@media (prefers-reduced-motion: reduce) {
+ .two { transition: none; }
+ .personal-life { scroll-behavior: auto; }
+ .personal-life img { transition: none; }
+}
