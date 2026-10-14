@@ -6,6 +6,7 @@
     <title>Hyunah Ko</title>
 
     <meta name="author" content="Hyunah Ko">
+    <meta name="description" content="Hyunah Ko — M.S. student at the Kim Jaechul Graduate School of AI, KAIST (CVLAB), working on visual representation learning for 3D/4D understanding and robotics.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="images/favicon/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="stylesheet.css">
@@ -23,11 +24,12 @@
                   Hyunah Ko
                 </p>
                 <p>
-                  I'm an undergraduate student at <a href="https://www.yonsei.ac.kr/sc/index.do">Yonsei University</a>, majoring in both Civil and Environmental Engineering and Computer Science.
-                  I am currently working as an undergraduate researcher at <a href="https://cvlab.kaist.ac.kr/home/">CVLAB, KAIST AI</a>, advised by <a href="https://cvlab.kaist.ac.kr/members/faculty/">Prof. Seungryong Kim</a>.
+                  I am an M.S. student at the Kim Jaechul Graduate School of AI, KAIST, working in <a href="https://cvlab.kaist.ac.kr/home/">CVLAB</a> under the supervision of <a href="https://cvlab.kaist.ac.kr/members/faculty/">Prof. Seungryong Kim</a>.
+                  I received my B.S. in Civil and Environmental Engineering with a double major in Computer Science from <a href="https://www.yonsei.ac.kr/sc/index.do">Yonsei University</a>.
+                  Previously, I worked with Prof. Seong Jae Hwang as an undergraduate researcher.
                 </p>
                 <p style="text-align:center">
-                  <a href="mailto:kha9867@yonsei.ac.kr">Email</a> &nbsp;/&nbsp;
+                  <a href="mailto:hyunahko@kaist.ac.kr">Email</a> &nbsp;/&nbsp;
                   <a href="data/CV_hyunahko.pdf">CV</a> &nbsp;/&nbsp;
                   <a href="https://scholar.google.com/citations?user=oh5Od2wAAAAJ&hl=ko">Scholar</a> &nbsp;/&nbsp;
                   <a href="https://github.com/HYUNAHKO">Github</a> &nbsp;/&nbsp;
@@ -39,62 +41,102 @@
               </td>
             </tr>
           </tbody></table>
+          <!-- Education Section -->
+          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+            <tr>
+              <td style="padding:20px;width:100%;vertical-align:middle">
+                <h2>Education</h2>
+                <p style="margin-bottom:0;">
+                  <strong>KAIST</strong>, Kim Jaechul Graduate School of AI &nbsp;·&nbsp; <em>Sep. 2026 &ndash; Present</em><br>
+                  <span class="info-detail">M.S. student, CVLAB &nbsp;/&nbsp; Advisor: Prof. Seungryong Kim</span>
+                </p>
+                <p style="margin-bottom:0;">
+                  <strong>Yonsei University</strong> &nbsp;·&nbsp; <em>Mar. 2022 &ndash; Aug. 2026</em><br>
+                  <span class="info-detail">B.S. in Civil and Environmental Engineering, Double Major: Computer Science &nbsp;/&nbsp; GPA: 3.96 / 4.5</span>
+                </p>
+              </td>
+            </tr>
+          </tbody></table>
           <!-- Research Interest Section -->
           <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
             <tr>
               <td style="padding:20px;width:100%;vertical-align:middle">
                 <h2>Research Interests</h2>
                 <p>
-                  My research focuses on 3D/4D scene understanding and reconstruction. I am interested in (1) compact feed-forward 3D representations, (2) extending such frameworks to dynamic scenes via temporal modeling, and (3) repurposing video diffusion transformers for 3D/4D perception. My long-term goal is to bridge spatial understanding with embodied agents that can perceive and interact with the physical world.
+                  My research focuses on visual representation learning for 3D/4D understanding and robotics. I am interested in multi-view learning and spatial representations that capture the geometry and semantics of the physical world. My interests also include compact 3D/4D reconstruction and world action models (WAMs), with the long-term goal of connecting visual perception with action.
                 </p>
                 <ul>
-                  <li>Compact 3D representations via feed-forward Gaussian prediction</li>
-                  <li>Feed-forward 4D reconstruction with dynamic point maps</li>
-                  <li>Video diffusion transformers for 3D/4D perception</li>
+                  <li>Multi-view representation learning and 3D scene understanding</li>
+                  <li>Compact 3D/4D representations and feed-forward scene reconstruction</li>
+                  <li>World action models and visual representations for robotics</li>
                 </ul>
               </td>
             </tr>
           </tbody></table>
-          <table style="width:100%;border:0px;border-spacing:0px 10px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-
-
           <!-- Publications Section -->
           <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
             <tr>
               <td style="padding:20px;width:100%;vertical-align:middle">
-                <h2>Publications</h2>
+                <h2>Publications &amp; Preprints</h2>
                 <p>
-                Highlighted publications and projects demonstrating my specific experience in 3D computer vision. 
-                <a href="data/CV_hyunahko.pdf">See CV for complete project list.</a>
+                Publications and preprints in 3D/4D computer vision and robotics. I also publish as Hyuna Ko. (* denotes equal contribution)
+                <a href="data/CV_hyunahko.pdf">See CV for the complete list.</a>
                 </p>
               </td>
             </tr>
           </tbody></table>
           <table style="width:100%;border:0px;border-spacing:0px 10px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
 
-            <!-- Paper 1 -->
-            <tr bgcolor="#E0FFFF">
-              <td style="padding:20px;width:25%;vertical-align:middle">
-                <img src='images/fourier_decomposition.png' width="240" style="border-radius: 8px;">
-              </td>
-              <td style="padding:20px;width:75%;vertical-align:middle">
-                <span class="papertitle">Fourier Decomposition for Explicit Representation of 3D Point Cloud Attributes</span>
+            <!-- Paper 1: One Loss Is Not Enough -->
+            <tr>
+              <td style="padding:20px;width:100%;vertical-align:middle" colspan="2">
+                <span class="papertitle">One Loss Is Not Enough: Cross-Objective Structured Pruning for Reasoning Vision&ndash;Language&ndash;Action Models</span>
                 <br>
-                Donghyun Kim, <strong>Hyunah Ko</strong>, Chanyoung Kim, Seong Jae Hwang
+                Seongchan Kim, Soowon Son, Sangoh Kim, <strong>Hyunah Ko</strong>, Eunbeen Hong, Hyunkoo Lee, Sanghyun Lee, WonJun Moon, Kihong Kim, Dongyeon Son, Woongchan Nam, Seungryong Kim
                 <br>
-                <em>Under Review</em>
+                <em>NeurIPS Workshops, 2026</em>
                 <br>
-                <a href="https://arxiv.org/abs/2503.10055">arXiv</a>
-                <p></p>
-                <p>
-                  Proposing a novel method for explicit representation of 3D point cloud attributes using Fourier decomposition.
-                </p>
+                <span class="info-detail">Grounded and Faithful Vision-Language Models for Real-World Deployment · On-Device Intelligence: Foundation Models under Real-World Constraints · PTA: From Pretrained Representations to Acting Agents</span>
               </td>
             </tr>
 
-            <!-- Paper 2 -->
+            <!-- Paper 2: C4G -->
             <tr>
-              <td style="padding:20px;vertical-align:middle">
+              <td style="padding:20px;width:100%;vertical-align:middle" colspan="2">
+                <a href="https://arxiv.org/abs/2605.31595">
+                  <span class="papertitle">C4G: Learning Global Motion with Compact Gaussians for Feed-Forward 4D Reconstruction</span>
+                </a>
+                <br>
+                Mungyeom Kim*, Minkyeong Jeon*, Honggyu An*, Jaewoo Jung, <strong>Hyuna Ko</strong>, Jisang Han, Hyeonseo Yu, Donghwan Shin, Sunghwan Hong, Takuya Narihira, Kazumi Fukuda, Yuki Mitsufuji, Seungryong Kim
+                <br>
+                <em>arXiv preprint</em>, 2026
+                <br>
+                <a href="https://arxiv.org/abs/2605.31595">arXiv</a> &nbsp;/&nbsp;
+                <a href="https://cvlab-kaist.github.io/C4G/">project page</a>
+              </td>
+            </tr>
+
+            <!-- Paper 3: C3G -->
+            <tr bgcolor="#E0FFFF">
+              <td style="padding:20px;width:100%;vertical-align:middle" colspan="2">
+                <a href="https://arxiv.org/abs/2512.04021">
+                  <span class="papertitle">C3G: Learning Compact 3D Representations with 2K Gaussians</span>
+                </a>
+                <br>
+                Honggyu An*, Jaewoo Jung*, Mungyeom Kim, Chaehyun Kim, Minkyeong Jeon, Jisang Han, Kazumi Fukuda, Takuya Narihira, <strong>Hyuna Ko</strong>, Junsu Kim, Sunghwan Hong, Yuki Mitsufuji, Seungryong Kim
+                <br>
+                <em>CVPR, 2026</em>
+                <br>
+                <span class="info-detail">Also at the CVPR 2026 Workshop on Open-World 3D Scene Understanding and Representations</span>
+                <br>
+                <a href="https://arxiv.org/abs/2512.04021">arXiv</a> &nbsp;/&nbsp;
+                <a href="https://cvlab-kaist.github.io/C3G/">project page</a>
+              </td>
+            </tr>
+
+            <!-- Paper 4: Backbone Augmented Training -->
+            <tr>
+              <td style="padding:20px;width:25%;vertical-align:middle">
                 <img src='images/backbone_augmented.png' width="240" style="border-radius: 8px;">
               </td>
               <td style="padding:20px;width:75%;vertical-align:middle">
@@ -104,7 +146,9 @@
                 <br>
                 Jae Wan Park, Junhyeok Kim, Youngjun Jun, <strong>Hyunah Ko</strong>, Seong Jae Hwang
                 <br>
-                <em>arXiv preprint</em>, 2025
+                <em>AAAI 2026 Workshop on Artificial Intelligence with Biased or Scarce Data</em> &mdash; <strong>Oral</strong>
+                <br>
+                <span class="info-detail">arXiv preprint, 2025</span>
                 <br>
                 <a href="https://arxiv.org/abs/2506.04288">arXiv</a>
                 <p></p>
@@ -114,6 +158,74 @@
               </td>
             </tr>
 
+            <!-- Paper 5: DiTracker -->
+            <tr>
+              <td style="padding:20px;width:100%;vertical-align:middle" colspan="2">
+                <a href="https://arxiv.org/abs/2512.20606">
+                  <span class="papertitle">Probing and Leveraging Video Diffusion Transformer Features for Robust Point Tracking</span>
+                </a>
+                <br>
+                Soowon Son, Honggyu An, Jisu Nam, <strong>Hyunah Ko</strong>, Chaehyun Kim, Dahyun Chung, Siyoon Jin, Jung Yi, Junhwa Hur, Seungryong Kim
+                <br>
+                <em>arXiv preprint</em>, 2025; revised 2026 &nbsp;·&nbsp; <span class="info-detail">DiTracker</span>
+                <br>
+                <a href="https://arxiv.org/abs/2512.20606">arXiv</a> &nbsp;/&nbsp;
+                <a href="https://cvlab-kaist.github.io/DiTracker/">project page</a>
+              </td>
+            </tr>
+
+            <!-- Paper 6: Fourier Decomposition -->
+            <tr>
+              <td style="padding:20px;width:25%;vertical-align:middle">
+                <img src='images/fourier_decomposition.png' width="240" style="border-radius: 8px;">
+              </td>
+              <td style="padding:20px;width:75%;vertical-align:middle">
+                <a href="https://arxiv.org/abs/2503.10055">
+                  <span class="papertitle">Fourier Decomposition for Explicit Representation of 3D Point Cloud Attributes</span>
+                </a>
+                <br>
+                Donghyun Kim, Chanyoung Kim, <strong>Hyunah Ko</strong>, Seong Jae Hwang
+                <br>
+                <em>arXiv preprint</em>, 2025; revised 2026
+                <br>
+                <a href="https://arxiv.org/abs/2503.10055">arXiv</a>
+                <p></p>
+                <p>
+                  Proposing a novel method for explicit representation of 3D point cloud attributes using Fourier decomposition.
+                </p>
+              </td>
+            </tr>
+
+          </tbody></table>
+
+          <!-- Research Experience Section -->
+          <table style="width:100%; margin:0 auto; border:0; border-spacing:0; padding:20px;"><tbody>
+            <tr>
+              <td>
+                <h2>Research Experience</h2>
+              </td>
+            </tr>
+          </tbody></table>
+          <table style="width:100%;border:0px;border-spacing:0px 20px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+            <tr>
+              <td align="center" style="padding:20px;width:25%;vertical-align:middle">
+                <div class="info-card gradient-purple">
+                  <h3>Research<br>Experience</h3>
+                </div>
+              </td>
+              <td style="padding:20px;width:75%;vertical-align:middle">
+                <div class="info-content">
+                  <strong>CVLAB, KAIST</strong> (Jul. 2025 - Present)<br>
+                  <span class="info-detail">M.S. student (since Sep. 2026); previously Undergraduate Researcher. Advisor: Prof. Seungryong Kim</span>
+                  <br><br>
+                  <strong>Medical Imaging and Computer Vision Lab, Yonsei Univ.</strong> (Jul. 2024 - Jul. 2025)<br>
+                  <span class="info-detail">Undergraduate Researcher, advised by Prof. Seong Jae Hwang</span>
+                  <br><br>
+                  <strong>Environmental Biotechnology & Thermal Lab, Yonsei Univ.</strong> (Jul. 2023 - Sep. 2023)<br>
+                  <span class="info-detail">Undergraduate Researcher, advised by Prof. Joonhong Park</span>
+                </div>
+              </td>
+            </tr>
           </tbody></table>
 
           <!-- Projects Section -->
@@ -151,17 +263,15 @@
               <td style="padding:20px;width:75%;vertical-align:middle">
                 <span class="papertitle">Multi-View Diffusion Gaussian Splatting (MVDGS)</span>
                 <br>
-                <em>May. 2025 – Jun. 2025</em> | <strong>Team Leader</strong>
+                <em>Apr. 2025 – May. 2025</em> | <strong>Team Leader</strong>
                 <br>
-                <a href="https://github.com/MVDGS">code</a> 
+                <a href="https://github.com/MVDGS">code</a>
                 <p></p>
                 <p>
                   <strong>Team Project</strong>, Yonsei Artificial Intelligence
                   <br>
-                  Developed a novel view synthesis system combining CameraCtrl and 3D Gaussian Splatting to generate 
-                  controllable 3D objects from single images with temporal consistency. Our approach addresses the challenge of preserving 
-                  fine-grained facial details in human-centric 3D content generation by integrating multi-view 
-                  diffusion models with 3DGS representation.
+                  Developed a single-image-to-3D generation framework integrating CameraCtrl and 3D Gaussian Splatting for
+                  temporally and geometrically consistent novel view synthesis. Awarded <strong>3rd Place at the 6th YAICON</strong>.
                 </p>
               </td>
             </tr>
@@ -181,10 +291,8 @@
                 <p>
                   <strong>Team Project</strong>, Yonsei Artificial Intelligence
                   <br>
-                  Built an end-to-end recipe recommendation system that detects ingredients from images using YOLOv5, 
-                  generates personalized recipes with knowledge-augmented LLM, and creates food images using Stable Diffusion. 
-                  Implemented a user-friendly interface allowing real-time ingredient detection and customized recipe generation 
-                  based on dietary preferences and available ingredients.
+                  Built an end-to-end recipe recommendation system that detects ingredients from images using YOLOv5 and
+                  generates personalized recipes with knowledge-augmented LLM prompts and Stable Diffusion food images.
                 </p>
               </td>
             </tr>
@@ -204,11 +312,8 @@
                 <p>
                   <strong>Team Project</strong>, Yonsei Data Science Lab
                   <br>
-                  Created a personalized pet memorial application that generates heartfelt letters and artistic images 
-                  commemorating beloved pets. Fine-tuned LLaMA3 using LoRA for emotionally resonant letter generation, 
-                  and integrated Stable Diffusion with ControlNet for style-consistent memorial artwork. Applied style 
-                  transfer techniques to match various artistic preferences, providing comfort to pet owners through 
-                  AI-generated personalized tributes.
+                  Created a pet memorial application that generates personalized letters with LoRA-finetuned LLaMA3
+                  and commemorative artwork with Stable Diffusion, ControlNet, and style transfer.
                 </p>
               </td>
             </tr>
@@ -228,12 +333,8 @@
                 <p>
                   <strong>Team Project</strong>, Yonsei Data Science Lab
                   <br>
-                  Analyzed Seoul's late-night mobility patterns and existing night bus data to identify underserved regions during 
-                  late-night hours. Performed comprehensive exploratory data analysis on night bus ridership data and applied 
-                  regression modeling to predict late-night transportation demand. Proposed data-driven night bus route 
-                  designs to improve accessibility for underserved communities, supported by statistical analysis and 
-                  geospatial visualization. The project demonstrates practical application of data science to address 
-                  real urban transportation challenges.
+                  Analyzed Seoul's late-night mobility and night bus ridership data to identify underserved regions, and
+                  proposed data-driven night bus routes using exploratory data analysis and regression-based demand modeling.
                 </p>
               </td>
             </tr>
@@ -249,27 +350,6 @@
           </tbody></table>
           <table style="width:100%;border:0px;border-spacing:0px 20px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
 
-            <!-- Research Experience -->
-            <tr>
-              <td align="center" style="padding:20px;width:25%;vertical-align:middle">
-                <div class="info-card gradient-purple">
-                  <h3>Research<br>Experience</h3>
-                </div>
-              </td>
-              <td style="padding:20px;width:75%;vertical-align:middle">
-                <div class="info-content">
-                  <strong>CVLAB, KAIST AI</strong> (Jul. 2025 - Present)<br>
-                  <span class="info-detail">Undergraduate Researcher, advised by Prof. Seungryong Kim</span>
-                  <br><br>
-                  <strong>Medical Imaging and Computer Vision Lab, Yonsei Univ.</strong> (Jul. 2024 - Jul. 2025)<br>
-                  <span class="info-detail">Undergraduate Researcher, advised by Prof. Seong Jae Hwang</span>
-                  <br><br>
-                  <strong>Environmental Biotechnology & Thermal Lab, Yonsei Univ.</strong> (Jul. 2023 - Sep. 2023)<br>
-                  <span class="info-detail">Undergraduate Researcher, advised by Prof. Joonhong Park</span>
-                </div>
-              </td>
-            </tr>
-
             <!-- Honors & Awards -->
             <tr>
               <td align="center" style="padding:20px;width:25%;vertical-align:middle">
@@ -279,6 +359,9 @@
               </td>
               <td style="padding:20px;width:75%;vertical-align:middle">
                 <div class="info-content">
+                  <strong>🥉 3rd Place</strong>, 6th YAICON, Yonsei Artificial Intelligence (2025)<br>
+                  <span class="info-detail">Awarded for MVDGS, a single-image-to-3D generation framework combining video diffusion and 3D Gaussian Splatting.</span>
+                  <br><br>
                   <strong>🏆 Grand Prize</strong>, 2024 Jeju Satellite Data Utilization Competition (Jul. 2024 – Aug. 2024)<br>
                   <span class="info-detail">Proposed a geospatial solution to address harmful green algae blooms in Jeju Island, using a segmentation model on satellite imagery to detect and map the bloom distribution.</span>
                   <br><br>
@@ -299,14 +382,14 @@
                 <div class="info-content">
 
                   <div style="margin-bottom: 10px;">
-                    <strong>Yonsei Artificial Intelligence</strong> (Dec. 2023 - Present)<br>
+                    <strong>Yonsei Artificial Intelligence</strong> (joined Dec. 2023)<br>
                     <ul style="margin-top: 4px; margin-bottom: 0; padding-left: 20px; list-style-type: '- ';">
-                      <li><strong>Vice President</strong> (Jan. 2025 - Jun. 2025)</li>
+                      <li><strong>Vice President</strong> (2025)</li>
                     </ul>
                   </div>
 
                   <div style="margin-bottom: 10px;">
-                    <strong>Yonsei Computer Club</strong> (Jul. 2023 - Present)<br>
+                    <strong>Yonsei Computer Club</strong> (joined Jul. 2023)<br>
                     <ul style="margin-top: 4px; margin-bottom: 0; padding-left: 20px; list-style-type: '- ';">
                       <li><strong>Vice President</strong> (Feb. 2024 - Feb. 2025)</li>
                     </ul>
