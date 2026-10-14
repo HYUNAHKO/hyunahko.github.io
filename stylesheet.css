@@ -258,3 +258,116 @@ span.highlight {
     transform: scale(1.05);
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
 }
+
+/* ===== Visual refresh (Oct. 2026) ===== */
+
+body {
+  background: #fafbfd;
+  color: #2a2f3a;
+  padding: 0 10px;
+}
+
+p, li, .info-content {
+  line-height: 1.65;
+}
+
+.name {
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  color: #1a1f2b;
+}
+
+h2 {
+  font-weight: 700;
+  font-size: 23px;
+  color: #1f2430;
+  position: relative;
+  padding-bottom: 10px;
+  margin-bottom: 8px;
+}
+
+h2::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 38px;
+  height: 3px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, #1772d0, #9795f0);
+}
+
+a {
+  transition: color 0.15s ease;
+}
+
+.papertitle {
+  font-size: 15px;
+  color: #1f2430;
+}
+
+/* Pill-style contact links */
+.btn-links a {
+  display: inline-block;
+  margin: 3px 4px;
+  padding: 5px 16px;
+  border: 1px solid #d6dce8;
+  border-radius: 999px;
+  background: #ffffff;
+  font-size: 13.5px;
+  color: #1772d0;
+  transition: all 0.18s ease;
+}
+
+.btn-links a:hover {
+  background: #1772d0;
+  border-color: #1772d0;
+  color: #ffffff;
+}
+
+/* Profile photo */
+img[alt="profile photo"] {
+  box-shadow: 0 6px 24px rgba(30, 50, 90, 0.16);
+}
+
+/* Highlighted paper / project rows */
+tr.highlight-row {
+  background: linear-gradient(135deg, #eef5ff 0%, #f6f3ff 100%);
+}
+
+tr.highlight-row > td:first-child {
+  border-top-left-radius: 14px;
+  border-bottom-left-radius: 14px;
+}
+
+tr.highlight-row > td:last-child {
+  border-top-right-radius: 14px;
+  border-bottom-right-radius: 14px;
+}
+
+/* Paper & project thumbnails */
+.thumb {
+  border-radius: 10px;
+  box-shadow: 0 3px 14px rgba(30, 50, 90, 0.10);
+  max-width: 100%;
+  height: auto;
+}
+
+/* Cards */
+.info-card {
+  box-shadow: 0 3px 12px rgba(30, 50, 90, 0.10);
+}
+
+.info-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 22px rgba(30, 50, 90, 0.14);
+}
+
+.info-content strong {
+  color: #1f2430;
+}
+
+/* Footer */
+p[style*="text-align:right"] {
+  color: #8a93a5;
+}
