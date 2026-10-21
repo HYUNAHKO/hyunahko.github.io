@@ -371,3 +371,91 @@ tr.highlight-row > td:last-child {
 p[style*="text-align:right"] {
   color: #8a93a5;
 }
+/* ===== Mobile layout ===== */
+
+img, video {
+  max-width: 100%;
+}
+
+@media (max-width: 640px) {
+  body {
+    padding: 0 4px;
+  }
+
+  /* Stack every two-column row vertically */
+  table, tbody, tr, td {
+    display: block;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box;
+  }
+
+  td {
+    padding: 12px 14px !important;
+  }
+
+  table {
+    padding: 0 !important;
+  }
+
+  /* Profile: photo above the name */
+  tr:has(img[alt="profile photo"]) {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  img[alt="profile photo"] {
+    display: block;
+    width: 60% !important;
+    margin: 0 auto;
+  }
+
+  .name {
+    padding-top: 4px;
+    font-size: 28px;
+  }
+
+  /* Thumbnails and section cards centered above their text */
+  td:has(> .thumb),
+  td:has(> .one),
+  td:has(> .info-card) {
+    text-align: center;
+    padding-bottom: 0 !important;
+  }
+
+  .thumb {
+    width: 100%;
+    max-width: 360px;
+  }
+
+  .one, .two, .one img, .two video {
+    width: 100% !important;
+    max-width: 240px;
+    height: auto !important;
+    aspect-ratio: 1 / 1;
+  }
+
+  .one {
+    margin: 0 auto;
+  }
+
+  .info-card {
+    padding: 16px 20px;
+  }
+
+  tr.highlight-row > td {
+    border-radius: 0 !important;
+  }
+
+  tr.highlight-row {
+    border-radius: 14px;
+  }
+
+  .personal-life {
+    height: 200px;
+  }
+
+  p, li, .info-content, a, span {
+    overflow-wrap: anywhere;
+  }
+}
