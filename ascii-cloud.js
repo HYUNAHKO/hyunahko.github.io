@@ -12,7 +12,6 @@
   if (!canvas || !clouds || !clouds.length) return;
   var ctx = canvas.getContext('2d');
   var box = canvas.parentNode;
-  var label = box.querySelector('.intro-model');
   // The model sits behind the intro text, faded so the text stays readable.
   var anchor = box.querySelector('.name').parentNode;
   var FADE = 0.32;
@@ -42,7 +41,7 @@
     for (i = 0; i < n * 3; i++) pos[i] *= f;
     return { pos: pos, nor: nor };
   }
-  var models = clouds.map(function (c) { var m = decode(c.data); m.name = c.name; return m; });
+  var models = clouds.map(function (c) { return decode(c.data); });
   var current = 0;
   var N = models[0].pos.length / 3;
   for (var mi = 1; mi < models.length; mi++) N = Math.min(N, models[mi].pos.length / 3);
@@ -65,7 +64,6 @@
       delay[i] = (home[i * 3 + 1] + 1) * 0.35 + Math.random() * 0.25;
     }
     current = m;
-    if (label) label.textContent = src.name;
   }
 
   // ---- view state -------------------------------------------------------
