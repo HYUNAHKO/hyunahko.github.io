@@ -12,9 +12,9 @@
   var box = canvas.parentNode;
   // The bunny sits behind the intro text, faded so the text stays readable.
   var anchor = box.querySelector('.name').parentNode;
-  var FADE = 0.42;
+  var FADE = 0.32;
 
-  var RAMP = " .,:;-=+*%#@";
+  var RAMP = " ·:+*";
   var FONT = 'ui-monospace, SFMono-Regular, Menlo, Consolas, monospace';
   // Colours run from the site's link blue to its accent purple by height.
   var C0 = [23, 114, 208], C1 = [151, 149, 240];
@@ -158,14 +158,11 @@
           var s = shade[id] / d, t = tint[id] / d;
           var v = Math.min(1, d * 0.6) * s;
           ch_ = RAMP[Math.min(RAMP.length - 1, 1 + Math.floor(v * (RAMP.length - 1)))];
-          a = Math.min(1, 0.25 + d * 0.5);
+          a = Math.min(1, d) * (0.35 + 0.65 * s);
           col = mix(C0, C1, t, Math.round(a * 8) / 8);
         } else if (wake[id] > 0.05) {
-          ch_ = wake[id] > 0.5 ? '+' : '·';
-          col = mix(C0, C1, 0.5, Math.round(wake[id] * 0.5 * 8) / 8);
-        } else if ((c + r) % 4 === 0 && r % 2 === 0) {
           ch_ = '·';
-          col = 'rgba(120,135,170,0.22)';
+          col = mix(C0, C1, 0.5, Math.round(wake[id] * 0.5 * 8) / 8);
         } else continue;
         if (col !== lastStyle) { ctx.fillStyle = col; lastStyle = col; }
         ctx.fillText(ch_, c * cw, r * ch);
