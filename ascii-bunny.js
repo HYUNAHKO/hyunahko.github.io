@@ -1,5 +1,5 @@
 /**
- * ASCII point-cloud renderer for the header: the Stanford Bunny as a cloud of
+ * ASCII point-cloud background for the intro: the Stanford Bunny as a cloud of
  * soft, Gaussian-splat-like points drawn into a grid of monospace glyphs.
  *   - slowly orbits on its own; drag to orbit it yourself
  *   - points near the cursor are pushed away and spring back into place
@@ -9,6 +9,10 @@
   var canvas = document.getElementById('ascii-bunny');
   if (!canvas || !window.BUNNY_POINTS) return;
   var ctx = canvas.getContext('2d');
+  var box = canvas.parentNode;
+  // The bunny sits behind the intro text, faded so the text stays readable.
+  var anchor = box.querySelector('.name').parentNode;
+  var FADE = 0.42;
 
   var RAMP = " .,:;-=+*%#@";
   var FONT = 'ui-monospace, SFMono-Regular, Menlo, Consolas, monospace';
@@ -44,7 +48,7 @@
   var yaw = 0.45, pitch = 0.1, spin = 0.25;
   var dragging = false, lastX = 0, lastY = 0, moved = 0;
   var mouse = { x: -1e4, y: -1e4, inside: false };
-  var W = 0, H = 0, dpr = 1, cw = 7, ch = 12, cols = 0, rows = 0;
+  var W = 0, H = 0, bx = 0, by = 0, bs = 1, dpr = 1, cw = 7, ch = 12, cols = 0, rows = 0;
   var dens, shade, tint, wake;
   var reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
   var visible = true, raf = 0, last = 0;
@@ -54,6 +58,9 @@
     if (r.width < 1) return;
     dpr = Math.min(window.devicePixelRatio || 1, 2);
     W = r.width; H = r.height;
+    var a = anchor.getBoundingClientRect();
+    bx = a.left - r.left + a.width / 2; by = a.top - r.top + a.height / 2;
+    bs = Math.min(a.height * 0.42, a.width * 0.4);
     canvas.width = Math.round(W * dpr); canvas.height = Math.round(H * dpr);
     var fs = W < 500 ? 8 : 10;
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
@@ -72,7 +79,7 @@
   function step(dt, t) {
     if (!dragging) yaw += spin * dt;
     var cy = Math.cos(yaw), sy = Math.sin(yaw);
-    var scale = H * 0.4, cx = W / 2, cyy = H / 2;
+    var scale = bs, cx = bx, cyy = by;
     var R = Math.min(90, W * 0.12);
     for (var i = 0; i < N; i++) {
       var j = i * 3;
@@ -112,7 +119,7 @@
   function draw() {
     dens.fill(0); shade.fill(0); tint.fill(0);
     var cy = Math.cos(yaw), sy = Math.sin(yaw), cp = Math.cos(pitch), sp = Math.sin(pitch);
-    var scale = H * 0.4, cx = W / 2, cyy = H / 2;
+    var scale = bs, cx = bx, cyy = by;
     var L = [-0.45, 0.65, 0.62];
     for (var i = 0; i < N; i++) {
       var j = i * 3;
@@ -142,6 +149,7 @@
     }
 
     ctx.clearRect(0, 0, W, H);
+    ctx.globalAlpha = FADE;
     var lastStyle = '';
     for (var r = 0; r < rows; r++) {
       for (var c = 0; c < cols; c++) {
@@ -194,7 +202,8 @@
     var r = canvas.getBoundingClientRect();
     return [e.clientX - r.left, e.clientY - r.top];
   }
-  canvas.addEventListener('pointerdown', function (e) {
+  box.addEventListener('pointerdown', function (e) {
+    if (e.target.closest('a, button')) return;
     dragging = true; moved = 0;
     var p = local(e); lastX = p[0]; lastY = p[1];
   });
@@ -217,7 +226,7 @@
   window.addEventListener('pointercancel', function () { dragging = false; });
   window.addEventListener('blur', function () { mouse.inside = false; dragging = false; });
 
-  new ResizeObserver(resize).observe(canvas);
+  new ResizeObserver(resize).observe(box);
   new IntersectionObserver(function (es) { visible = es[0].isIntersecting; schedule(); }).observe(canvas);
   reduced.addEventListener && reduced.addEventListener('change', schedule);
 
