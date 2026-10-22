@@ -8,6 +8,17 @@
     <meta name="author" content="Hyunah Ko">
     <meta name="description" content="Hyunah Ko — M.S. student at the Kim Jaechul Graduate School of AI, KAIST (CVLAB), working on visual representation learning for 3D/4D understanding and robotics.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://hyunahko.github.io/">
+    <meta property="og:title" content="Hyunah Ko">
+    <meta property="og:description" content="M.S. student at the Kim Jaechul Graduate School of AI, KAIST (CVLAB), working on visual representation learning for 3D/4D understanding and robotics.">
+    <meta property="og:image" content="https://hyunahko.github.io/images/og-image.jpg">
+    <meta property="og:image:width" content="600">
+    <meta property="og:image:height" content="600">
+    <meta property="og:image:alt" content="Hyunah Ko">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:image" content="https://hyunahko.github.io/images/og-image.jpg">
     <link rel="shortcut icon" href="images/favicon/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="stylesheet.css">
     
@@ -18,7 +29,7 @@
       <tr style="padding:0px">
         <td style="padding:0px">
           <div class="intro">
-            <canvas id="ascii-bunny" role="img" aria-label="Interactive ASCII point cloud of the Stanford Bunny"></canvas>
+            <canvas id="ascii-cloud" role="img" aria-label="Interactive ASCII point clouds of classic 3D models"></canvas>
           <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
             <tr style="padding:0px">
               <td style="padding:2.5%;width:63%;vertical-align:middle">
@@ -43,7 +54,7 @@
               </td>
             </tr>
           </tbody></table>
-            <span class="intro-hint">drag the background to orbit &middot; click to reconstruct</span>
+            <span class="intro-hint"><span class="intro-model">Stanford Bunny</span> &middot; drag the background to orbit &middot; click to reconstruct</span>
           </div>
           <!-- Education Section -->
           <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
@@ -461,7 +472,7 @@
         </td>
       </tr>
     </table>
-    <script src="data/bunny-points.js"></script>
-    <script src="ascii-bunny.js"></script>
+    <script src="data/point-clouds.js"></script>
+    <script src="ascii-cloud.js"></script>
   </body>
 </html>

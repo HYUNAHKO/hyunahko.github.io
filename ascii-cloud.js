@@ -1,16 +1,19 @@
 /**
- * ASCII point-cloud background for the intro: the Stanford Bunny as a cloud of
- * soft, Gaussian-splat-like points drawn into a grid of monospace glyphs.
+ * ASCII point-cloud background for the intro: classic 3D test models (Stanford
+ * Bunny, Dragon, ...) as clouds of soft, Gaussian-splat-like points drawn into a
+ * grid of monospace glyphs.
  *   - slowly orbits on its own; drag to orbit it yourself
  *   - points near the cursor are pushed away and spring back into place
- *   - click (or tap) scatters it into noise and it "reconstructs" itself
+ *   - click (or tap) bursts it apart and it "reconstructs" as the next model
  */
 (function () {
-  var canvas = document.getElementById('ascii-bunny');
-  if (!canvas || !window.BUNNY_POINTS) return;
+  var canvas = document.getElementById('ascii-cloud');
+  var clouds = window.POINT_CLOUDS;
+  if (!canvas || !clouds || !clouds.length) return;
   var ctx = canvas.getContext('2d');
   var box = canvas.parentNode;
-  // The bunny sits behind the intro text, faded so the text stays readable.
+  var label = box.querySelector('.intro-model');
+  // The model sits behind the intro text, faded so the text stays readable.
   var anchor = box.querySelector('.name').parentNode;
   var FADE = 0.32;
 
@@ -20,28 +23,49 @@
   var C0 = [23, 114, 208], C1 = [151, 149, 240];
 
   // ---- point data --------------------------------------------------------
-  var raw = atob(window.BUNNY_POINTS);
-  var N = raw.length / 6;
-  var home = new Float32Array(N * 3), nrm = new Float32Array(N * 3);
-  for (var i = 0; i < N; i++) {
-    for (var k = 0; k < 3; k++) {
-      var p = raw.charCodeAt(i * 6 + k), q = raw.charCodeAt(i * 6 + 3 + k);
-      home[i * 3 + k] = (p > 127 ? p - 256 : p) / 127;
-      nrm[i * 3 + k] = (q > 127 ? q - 256 : q) / 127;
+  function decode(b64) {
+    var raw = atob(b64), n = raw.length / 6;
+    var pos = new Float32Array(n * 3), nor = new Float32Array(n * 3);
+    for (var i = 0; i < n * 3; i++) {
+      var p = raw.charCodeAt(Math.floor(i / 3) * 6 + i % 3);
+      var q = raw.charCodeAt(Math.floor(i / 3) * 6 + 3 + i % 3);
+      pos[i] = (p > 127 ? p - 256 : p) / 127;
+      nor[i] = (q > 127 ? q - 256 : q) / 127;
     }
+    // Fit every model to the same frame: full height, or width when it's wide and flat.
+    var hy = 0, hr = 0;
+    for (i = 0; i < n; i++) {
+      hy = Math.max(hy, Math.abs(pos[i * 3 + 1]));
+      hr = Math.max(hr, Math.hypot(pos[i * 3], pos[i * 3 + 2]));
+    }
+    var f = 1 / Math.max(hy, hr / 1.25);
+    for (i = 0; i < n * 3; i++) pos[i] *= f;
+    return { pos: pos, nor: nor };
   }
+  var models = clouds.map(function (c) { var m = decode(c.data); m.name = c.name; return m; });
+  var current = 0;
+  var N = models[0].pos.length / 3;
+  for (var mi = 1; mi < models.length; mi++) N = Math.min(N, models[mi].pos.length / 3);
+  var home = new Float32Array(N * 3), nrm = new Float32Array(N * 3);
   var off = new Float32Array(N * 3), vel = new Float32Array(N * 3);
   var delay = new Float32Array(N);
 
-  function scatter(strength) {
-    for (var i = 0; i < N; i++) {
-      for (var k = 0; k < 3; k++) {
-        off[i * 3 + k] = (Math.random() * 2 - 1) * strength;
-        vel[i * 3 + k] = 0;
-      }
+  // Switch to model m. Each point keeps its on-screen position and gets a random
+  // outward kick, then springs into the new shape once its delay has passed.
+  function morph(m, burst) {
+    var src = models[m];
+    for (var i = 0; i < N * 3; i++) {
+      var cur = home[i] + off[i];
+      home[i] = src.pos[i]; nrm[i] = src.nor[i];
+      off[i] = cur - home[i] + (Math.random() * 2 - 1) * burst * 0.4;
+      vel[i] = (Math.random() * 2 - 1) * burst * 1.5;
+    }
+    for (i = 0; i < N; i++) {
       // Points nearer the bottom settle first, so it builds up like a scan.
       delay[i] = (home[i * 3 + 1] + 1) * 0.35 + Math.random() * 0.25;
     }
+    current = m;
+    if (label) label.textContent = src.name;
   }
 
   // ---- view state -------------------------------------------------------
@@ -83,9 +107,13 @@
     var R = Math.min(90, W * 0.12);
     for (var i = 0; i < N; i++) {
       var j = i * 3;
-      if (t < delay[i]) continue;
+      if (t < delay[i]) {
+        // drift with the burst until this point's turn to settle
+        for (var k = 0; k < 3; k++) { off[j + k] += vel[j + k] * dt; vel[j + k] *= Math.pow(0.15, dt); }
+        continue;
+      }
       // spring back home
-      for (var k = 0; k < 3; k++) {
+      for (k = 0; k < 3; k++) {
         vel[j + k] += (-off[j + k] * 38 - vel[j + k] * 7.5) * dt;
       }
       // cursor pushes points outward in the screen plane
@@ -158,7 +186,7 @@
           var s = shade[id] / d, t = tint[id] / d;
           var v = Math.min(1, d * 0.6) * s;
           ch_ = RAMP[Math.min(RAMP.length - 1, 1 + Math.floor(v * (RAMP.length - 1)))];
-          a = Math.min(1, d) * (0.35 + 0.65 * s);
+          a = Math.min(1, d * 1.6) * (0.35 + 0.65 * s);
           col = mix(C0, C1, t, Math.round(a * 8) / 8);
         } else if (wake[id] > 0.05) {
           ch_ = '·';
@@ -192,7 +220,7 @@
     last = performance.now();
     raf = requestAnimationFrame(frame);
   }
-  function reconstruct() { scatter(1.6); clock = 0; }
+  function reconstruct() { morph((current + 1) % models.length, 1.2); clock = 0; }
 
   // ---- input ------------------------------------------------------------
   function local(e) {
@@ -228,6 +256,9 @@
   reduced.addEventListener && reduced.addEventListener('change', schedule);
 
   resize();
-  if (!reduced.matches) reconstruct();
+  // Start as noise and assemble into the first model.
+  for (var i0 = 0; i0 < N * 3; i0++) off[i0] = (Math.random() * 2 - 1) * 1.6;
+  morph(0, 0);
+  if (reduced.matches) off.fill(0);
   schedule();
 })();
